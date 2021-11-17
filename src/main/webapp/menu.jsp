@@ -36,13 +36,14 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/demo_war_exploded/menu.jsp">Menu</a>
+              <a class="navbar-brand" href="/demo/menu.jsp">Menu</a>
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
-                  <li><a href="/demo_war_exploded/coffee">Coffee</a></li>
-                  <li><a href="/demo_war_exploded/milktea">Milk Tea</a></li>
-                  <li><a href="/demo_war_exploded/fruittea">Fruit Tea</a></li>
+                  <li><a href="/demo/coffee">Coffee</a></li>
+                  <li><a href="/demo/milktea">Milk Tea</a></li>
+                  <li><a href="/demo/fruittea">Fruit Tea</a></li>
+                  <li><a href="/demo/ingredient">Ingredient</a></li>
               </ul>
           </div>
       </div>

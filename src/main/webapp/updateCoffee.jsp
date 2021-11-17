@@ -87,7 +87,7 @@
                                                                                          src="${updateCoffee.image}"
                                                                                          width="180"></div>
         </div>
-        <form action="/demo_war_exploded/updateCoffee" method="post">
+        <form action="/demo/updateCoffee" method="post">
         <div class="col-md-8">
             <div class="p-3 py-5">
                 <div class="row mt-2">

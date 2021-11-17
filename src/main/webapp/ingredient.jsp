@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
-
-<html>
 <head>
-    <title>Coffee Manager</title>
+    <title>Ingredient Management</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body, html {
             height: 100%;
@@ -70,7 +68,7 @@
         }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+
 <body>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -78,10 +76,10 @@
             <a class="navbar-brand" href="/demo/menu.jsp">Menu</a>
         </div>
         <ul class="nav navbar-nav">
-            <li ><a href="/demo/coffee">Coffee</a></li>
-            <li class="active"><a href="/demo/milktea">Milktea</a></li>
-            <li><a href="/demo/fruittea">Fruittea</a></li>
-            <li><a href="/demo/ingredient">Ingredient</a></li>
+            <li><a href="/demo/coffee">Coffee</a></li>
+            <li><a href="/demo/milktea">Milk Tea</a></li>
+            <li><a href="/demo/fruittea">Fruit Tea</a></li>
+            <li class="active"><a href="/demo/ingredient">Ingredient</a></li>
         </ul>
         <form class="navbar-form navbar-right" action="/action_page.php">
             <div class="input-group">
@@ -97,41 +95,63 @@
 </nav>
 <div class="hero-image">
     <div class="hero-text">
-        <h1 style="font-size:50px">The Happy Garden</h1>
-        <p>And I'm a Drinker and Thinker</p>
+        <h1 style="font-size:50px">Total Ingredients</h1>
+        <p>Total ingredients in stock</p>
     </div>
 </div>
 <div class="container">
     <table class="table table-striped">
+
         <thead>
         <tr>
-            <th>IMAGE</th>
-            <th>CODE</th>
-            <th>NAME</th>
-            <th>SIZE</th>
-            <th>COST</th>
-            <th>TEA TYPE</th>
+            <th>COFFEE(GR)</th>
+            <th>FRESH MILK(ML)</th>
+            <th>CONDENSED MILK(ML)</th>
+            <th>SUGAR(ML)</th>
             <th>AMOUNT OF TEA (ML)</th>
-            <th>CONDENSED MILK (ML)</th>
-            <th>TYPE SYRUP</th>
             <th>AMOUNT OF SYRUP (ML)</th>
+            
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="x" items="${listMilktea}">
+        <c:forEach var="x" items="${listIngredient}">
             <tr>
-                <td><img class="card-image-top img-thumbnail" src="${x.image}" alt="Card image cap" height="100"
-                         width="100"></td>
-                <td>${x.code}</td>
-                <td>${x.name}</td>
-                <td>${x.size}</td>
-                <td>${x.price}</td>
-                <td>${x.typeofTea}</td>
-                <td>${x.mlTea}</td>
-                <td>${x.condensedMilk}</td>
-                <td>${x.typeofSyrup}</td>
-                <td>${x.mlSyrup}</td>
+                <td>${x.grCoffee}</td> 	
+                <td>${x.freshMilk}</td> 
+                <td>${x.condensedMilk}</td> 
+                <td>${x.sugar}</td>		 
+                <td>${x.mlTea}</td> 	
+                <td>${x.mlSyrup}</td> 	
             </tr>
+            <tr>
+						<form action="ingredient" method="POST">
+						
+						<td>ADD <input type="number" value=0 name="addgrCoffee" /> <br /> <input
+							type="submit" value="ADD" />
+							
+						</td>
+						<td>ADD <input type="number" value=0 name="addfreshMilk" /> <br /> <input
+							type="submit" value="ADD" />
+							
+						</td>
+						<td>ADD <input type="number" value=0 name="addcondensedMilk" /> <br />
+							<input type="submit" value="ADD" />
+							
+						</td>
+						<td>ADD <input type="number" value=0 name="addsugar" /> <br /> <input
+							type="submit" value="ADD" />
+							
+						</td>
+						<td>ADD <input type="number" value=0 name="addmlTea" /> <br /> <input
+							type="submit" value="ADD" />
+							
+						</td>
+						<td>ADD <input type="number" value=0 name="addmlSyrup" /> <br /> <input
+							type="submit" value="ADD" />
+							
+						</td>
+						</form>
+					</tr>
         </c:forEach>
         </tbody>
     </table>

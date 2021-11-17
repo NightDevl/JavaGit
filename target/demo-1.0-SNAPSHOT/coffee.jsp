@@ -73,12 +73,12 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/demo_war_exploded/menu.jsp">Menu</a>
+            <a class="navbar-brand" href="/demo/menu.jsp">Menu</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="/demo_war_exploded/coffee">Coffee</a></li>
-            <li><a href="/demo_war_exploded/milktea">Milk Tea</a></li>
-            <li><a href="/demo_war_exploded/fruittea">Fruit Tea</a></li>
+            <li class="active"><a href="/demo/coffee">Coffee</a></li>
+            <li><a href="/demo/milktea">Milk Tea</a></li>
+            <li><a href="/demo/fruittea">Fruit Tea</a></li>
         </ul>
         <form class="navbar-form navbar-right" action="searchCoffee" method="get">
             <div class="input-group">
@@ -166,7 +166,7 @@
 <script>
     function DeleteFunction(id) {
         $.ajax({
-            url: '/demo_war_exploded/coffee?sid=' + id,
+            url: '/demo/coffee?sid=' + id,
             dataType: 'text',
             type: 'DELETE',
             async: true,
@@ -188,7 +188,7 @@
 <script>
     function SelectByID(id) {
         $.ajax({
-            url: '/demo_war_exploded/updateCoffee?sid=' + id,
+            url: '/demo/updateCoffee?sid=' + id,
             dataType: 'text',
             type: 'GET',
             async: true,
@@ -197,7 +197,7 @@
                     alert(404);
                 },
                 200: function (response) {
-                    window.location.href = "/demo_war_exploded/updateCoffee?sid=" + id
+                    window.location.href = "/demo/updateCoffee?sid=" + id
                 }
             },
             error: function (jqXHR, status, errorThrown) {
